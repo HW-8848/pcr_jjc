@@ -1420,6 +1420,65 @@ class SolveList {
         RoleEnum.lima
       ],
     ],
-    //
+    // EMT拉姆静流江花羊驼
+    [
+      RoleEnum.aimiliya,
+      RoleEnum.lamu,
+      RoleEnum.jingliu,
+      RoleEnum.konghua_dajianghu,
+      RoleEnum.lima
+    ]: [
+      [
+        RoleEnum.youni,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.zhuxi,
+        RoleEnum.riheli,
+        RoleEnum.lima
+      ],
+      [
+        RoleEnum.luna,
+        RoleEnum.chuyin,
+        RoleEnum.yixu,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali
+      ],
+      [
+        RoleEnum.luna,
+        RoleEnum.chuyin,
+        RoleEnum.xiangcheng,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali
+      ],
+    ],
+    // 真步魔驴咲恋扇子羊驼
+    [
+      RoleEnum.zhenbu,
+      RoleEnum.xiangcheng_mofashaonv,
+      RoleEnum.xiaolian,
+      RoleEnum.ninong,
+      RoleEnum.lima
+    ]: [
+      [
+        RoleEnum.luna,
+        RoleEnum.chuyin,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali,
+        RoleEnum.lima
+      ],
+      [
+        RoleEnum.youyi_gongzhu,
+        RoleEnum.xiangcheng,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali,
+        RoleEnum.lima
+      ],
+      [
+        RoleEnum.youyi_gongzhu,
+        RoleEnum.chuyin,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali,
+        RoleEnum.lima
+      ],
+    ],
   };
 }
