@@ -1480,5 +1480,28 @@ class SolveList {
         RoleEnum.lima
       ],
     ],
+    // 伊绪水电雷姆妮侬羊驼
+    [
+      RoleEnum.yixu,
+      RoleEnum.xiaolian_xiari,
+      RoleEnum.leimu,
+      RoleEnum.ninong,
+      RoleEnum.lima
+    ]: [
+      [
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.lamu,
+        RoleEnum.youjiali,
+        RoleEnum.riheli,
+        RoleEnum.lima
+      ],
+      [
+        RoleEnum.luna,
+        RoleEnum.chuyin,
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.youjiali,
+        RoleEnum.riheli
+      ],
+    ],
   };
 }
