@@ -5,8 +5,8 @@ import 'package:wanzi/page/other/add/AddDefense.dart';
 import 'package:wanzi/tool/RoleData.dart';
 import 'package:wanzi/tool/SolveList.dart';
 
-class Settings extends StatelessWidget {
-  const Settings({Key? key}) : super(key: key);
+class Other extends StatelessWidget {
+  const Other({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

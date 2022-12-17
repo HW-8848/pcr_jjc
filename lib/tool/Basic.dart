@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
-import '../page/home/JjcHome.dart';
-import '../page/other/Other.dart';
+import 'package:wanzi/page/home/JjcHome.dart';
+import 'package:wanzi/page/other/Other.dart';
 
 class Basic extends StatefulWidget {
   const Basic({Key? key}) : super(key: key);
@@ -12,7 +11,7 @@ class Basic extends StatefulWidget {
 }
 
 class _BasicState extends State<Basic> {
-  List<Widget> listBody = [const JjcHome(), const Settings()];
+  List<Widget> listBody = [const JjcHome(), const Other()];
   int listIndex = 0;
 
   @override
