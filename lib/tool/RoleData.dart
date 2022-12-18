@@ -1,4 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:wanzi/tool/LocalCache.dart';
+import 'package:wanzi/tool/RealSolution.dart';
 import 'package:wanzi/tool/RoleEnum.dart';
 import 'package:wanzi/tool/SolveList.dart';
 
@@ -25,12 +27,38 @@ class RoleData {
 
   static List<List<RoleEnum>>? toSolve(List<RoleEnum> defenseList) {
     List<List<RoleEnum>>? list = [];
-    for (var defense in SolveList.solveList.keys) {
+    for (var defense in RealSolution.realSolutions.keys) {
       if (listEquals(defense, defenseList)) {
-        return SolveList.solveList[defense];
+        return RealSolution.getRealSolutions[defense];
       }
     }
     return list;
+  }
+
+  static Map<List<RoleEnum>, List<List<RoleEnum>>> get getUserSolutions {
+    if (!LocalCache.containsKey(RoleData.userSolutionKey)) {
+      return {};
+    }
+    Map<List<RoleEnum>, List<List<RoleEnum>>> userSolutionsMap = {};
+    Map userSolutionMap = LocalCache.getMap(RoleData.userSolutionKey);
+    userSolutionMap.forEach((defenseName, attackName) {
+      List<String> defenseNameList = defenseName.split(RoleData.setSplit);
+      List<String> attackNameList = attackName.split(RoleData.setSplit);
+      List<RoleEnum> defenseRoleList = [];
+      List<RoleEnum> attackRoleList = [];
+      for (var defenseName in defenseNameList) {
+        Iterable<RoleEnum> roleEnum =
+            RoleEnum.values.where((role) => role.getName == defenseName);
+        defenseRoleList.add(roleEnum.first);
+      }
+      for (var attackName in attackNameList) {
+        Iterable<RoleEnum> roleEnum =
+            RoleEnum.values.where((role) => role.getName == attackName);
+        attackRoleList.add(roleEnum.first);
+      }
+      userSolutionsMap[defenseRoleList] = [attackRoleList];
+    });
+    return userSolutionsMap;
   }
 
   static String get kailu {
@@ -67,6 +95,16 @@ class RoleData {
 
   static String get setSplit {
     return "+";
+  }
+
+  /// 是否仅显示个人添加的解法
+  static String get userSelectSolutionKey {
+    return "userSelectSolutionKey";
+  }
+
+  /// 用户添加的解法Key
+  static String get userSolutionKey {
+    return "userSolution";
   }
 
   static const String qianwei = "1";

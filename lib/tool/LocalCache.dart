@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wanzi/tool/RealSolution.dart';
 import 'package:wanzi/tool/RoleData.dart';
 import 'package:wanzi/tool/RoleEnum.dart';
 import 'package:wanzi/tool/SolveList.dart';
@@ -16,7 +17,8 @@ class LocalCache {
 
   static Future<LocalCache> getInstance() async {
     _preferences = await SharedPreferences.getInstance();
-    _settings();
+    // _settings();
+    RealSolution.setRealSolutions();
     return _instance;
   }
 

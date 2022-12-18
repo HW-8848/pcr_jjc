@@ -65,7 +65,7 @@ class _JjcHomeState extends State<JjcHome> {
                           Duration(seconds: RoleData.easyLoadingTime), () {
                         EasyLoading.dismiss();
                       });
-                    } else {
+                    } else if (defenseList.length == 5) {
                       List<List<RoleEnum>>? solutionList =
                           RoleData.toSolve(defenseList)!;
                       if (solutionList.isEmpty) {
@@ -120,7 +120,7 @@ class _JjcHomeState extends State<JjcHome> {
                     iconSize: 40,
                     icon: Image.asset(RoleData.getIcon(role)),
                     onPressed: () {
-                      RoleData.defenseList.remove(role);
+                      defenseList.remove(role);
                       switch (role.getLocation) {
                         case RoleData.qianwei:
                           aRoleList.add(role);

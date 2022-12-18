@@ -1842,5 +1842,21 @@ class SolveList {
         RoleEnum.qiunai
       ],
     ],
+    // 魔驴伊绪可可萝黄骑羊驼
+    [
+      RoleEnum.xiangcheng_mofashaonv,
+      RoleEnum.yixu,
+      RoleEnum.kekeluo,
+      RoleEnum.youjiali,
+      RoleEnum.lima
+    ]: [
+      [
+        RoleEnum.xiaolian_xiari,
+        RoleEnum.kekeluo_gongzhu,
+        RoleEnum.zhuxi,
+        RoleEnum.riheli,
+        RoleEnum.lima
+      ],
+    ],
   };
 }

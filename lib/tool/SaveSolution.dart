@@ -17,7 +17,14 @@ class SaveSolution {
         defenseStringKey.substring(0, defenseStringKey.length - 1);
     attackStringValue =
         attackStringValue.substring(0, attackStringValue.length - 1);
-    LocalCache.setString(defenseStringKey, attackStringValue);
+    Map<String, String> map = {defenseStringKey: attackStringValue};
+    if (LocalCache.containsKey(RoleData.userSolutionKey)) {
+      Map solutionMap = LocalCache.getMap(RoleData.userSolutionKey);
+      solutionMap.addAll(map);
+      LocalCache.setMap(RoleData.userSolutionKey, solutionMap);
+    } else {
+      LocalCache.setMap(RoleData.userSolutionKey, map);
+    }
     return true;
   }
 }

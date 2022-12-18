@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wanzi/page/other/DeleteAddSolution.dart';
 import 'package:wanzi/page/other/Update.dart';
 import 'package:wanzi/page/other/add/AddDefense.dart';
+import 'package:wanzi/page/other/settings/Settings.dart';
+import 'package:wanzi/tool/RealSolution.dart';
 import 'package:wanzi/tool/RoleData.dart';
 import 'package:wanzi/tool/SolveList.dart';
 
@@ -60,20 +62,26 @@ class Other extends StatelessWidget {
         ),
         ListTile(
           title: const Text(
-            "角色列表",
+            "其它设置",
             style: TextStyle(fontSize: 20),
           ),
-          subtitle: const Text("list of roles"),
+          subtitle: const Text("other settings"),
           trailing: const Icon(Icons.keyboard_arrow_right),
-          enabled: false,
-          onTap: () => {},
+          onTap: () => {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Settings(),
+                ))
+          },
         ),
         ListTile(
           title: Text(
-            "已记录${SolveList.solveList.length}组防守队",
+            "已记录${RealSolution.realSolutions.length}组防守队",
             style: const TextStyle(fontSize: 20),
           ),
-          subtitle: Text("There are ${SolveList.solveList.length} solutions"),
+          subtitle:
+              Text("There are ${RealSolution.realSolutions.length} solutions"),
           trailing: const Icon(Icons.keyboard_arrow_right),
           enabled: false,
           onTap: () => {},

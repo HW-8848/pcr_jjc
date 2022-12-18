@@ -48,6 +48,10 @@ class _AddSolutionState extends State<AddSolution> {
                       EasyLoading.show(
                           status: "保存成功,解法重启后生效",
                           indicator: Image.asset(RoleData.long_4));
+                      Future.delayed(
+                          Duration(seconds: RoleData.easyLoadingTime), () {
+                        EasyLoading.dismiss();
+                      });
                     } else {
                       EasyLoading.show(
                           status: "保存失败,请重启后重试,QQ群797780027",

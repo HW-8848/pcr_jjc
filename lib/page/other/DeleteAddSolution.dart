@@ -14,7 +14,7 @@ class DeleteAddSolution extends StatelessWidget {
         title: TextButton(
           child: const Text("点击删除添加的所有解法"),
           onPressed: () {
-            LocalCache.clear();
+            LocalCache.remove(RoleData.userSolutionKey);
             EasyLoading.show(
                 status: "删除成功，重启后生效", indicator: Image.asset(RoleData.long_3));
             Future.delayed(

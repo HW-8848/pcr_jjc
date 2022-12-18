@@ -119,7 +119,7 @@ class _AddAttackState extends State<AddAttack> {
                     iconSize: 40,
                     icon: Image.asset(RoleData.getIcon(role)),
                     onPressed: () {
-                      RoleData.defenseList.remove(role);
+                      attackList.remove(role);
                       switch (role.getLocation) {
                         case RoleData.qianwei:
                           aRoleList.add(role);
