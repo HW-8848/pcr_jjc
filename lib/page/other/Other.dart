@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wanzi/page/other/DeleteAddSolution.dart';
 import 'package:wanzi/page/other/Update.dart';
 import 'package:wanzi/page/other/add/AddDefense.dart';
 import 'package:wanzi/page/other/settings/Settings.dart';
+import 'package:wanzi/page/other/view/ViewAddSolutions.dart';
 import 'package:wanzi/tool/RealSolution.dart';
 import 'package:wanzi/tool/RoleData.dart';
-import 'package:wanzi/tool/SolveList.dart';
 
 class Other extends StatelessWidget {
   const Other({Key? key}) : super(key: key);
@@ -32,16 +31,16 @@ class Other extends StatelessWidget {
         ),
         ListTile(
           title: const Text(
-            "删除新增的全部解法",
+            "查看添加的解法",
             style: TextStyle(fontSize: 20),
           ),
-          subtitle: const Text("delete all add new solution"),
+          subtitle: const Text("view add solutions"),
           trailing: const Icon(Icons.keyboard_arrow_right),
           onTap: () => {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DeleteAddSolution(),
+                  builder: (context) => const ViewAddSolutions(),
                 ))
           },
         ),

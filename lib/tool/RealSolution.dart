@@ -43,4 +43,19 @@ class RealSolution {
       });
     }
   }
+
+  static void deleteAddSolution(List<RoleEnum> defenseList) {
+    for (var key in userSolutions.keys) {
+      if (listEquals(key, defenseList)) {
+        String solutionName = "";
+        for (var role in key) {
+          solutionName += "${role.getName}${RoleData.setSplit}";
+        }
+        solutionName = solutionName.substring(0, solutionName.length - 1);
+        Map map = LocalCache.getMap(RoleData.userSolutionKey);
+        map.remove(solutionName);
+        LocalCache.setMap(RoleData.userSolutionKey, map);
+      }
+    }
+  }
 }

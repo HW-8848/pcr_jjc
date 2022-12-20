@@ -4,25 +4,30 @@ import 'package:wanzi/tool/RoleData.dart';
 import 'package:wanzi/tool/RoleEnum.dart';
 import 'package:wanzi/tool/SaveSolution.dart';
 
-class AddSolution extends StatefulWidget {
+class ShowSolution extends StatefulWidget {
   final List<RoleEnum> defenseList;
   final List<RoleEnum> attackList;
-  const AddSolution(
+  const ShowSolution(
       {super.key, required this.defenseList, required this.attackList});
 
   @override
-  State<AddSolution> createState() => _AddSolutionState();
+  State<ShowSolution> createState() => _ShowSolutionState();
 }
 
-class _AddSolutionState extends State<AddSolution> {
+class _ShowSolutionState extends State<ShowSolution> {
   List<RoleEnum> defenseList = [];
   List<RoleEnum> attackList = [];
+
+  String bottleArray = "";
 
   @override
   void initState() {
     super.initState();
     attackList = widget.attackList;
     defenseList = widget.defenseList;
+    for (var defense in widget.defenseList) {
+      bottleArray += " ${defense.getName}";
+    }
   }
 
   @override
@@ -31,35 +36,10 @@ class _AddSolutionState extends State<AddSolution> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(
-                "保存解法",
-                style: TextStyle(
-                  color: (defenseList.length == 5 ? Colors.green : Colors.red),
-                ),
+                "怎么拆$bottleArray",
+                style: const TextStyle(fontSize: 15.0, color: Colors.blue),
               ),
               centerTitle: true,
-              actions: [
-                TextButton(
-                  child: const Text(
-                    "保存",
-                    style: TextStyle(color: Colors.green, fontSize: 20.0),
-                  ),
-                  onPressed: () {
-                    if (SaveSolution.saveSolution(attackList, defenseList)) {
-                      EasyLoading.show(
-                          status: "保存成功,解法重启后生效",
-                          indicator: Image.asset(RoleData.long_4));
-                      Future.delayed(
-                          Duration(seconds: RoleData.easyLoadingTime), () {
-                        EasyLoading.dismiss();
-                      });
-                    } else {
-                      EasyLoading.show(
-                          status: "保存失败,请重启后重试,QQ群797780027",
-                          indicator: Image.asset(RoleData.long_3));
-                    }
-                  },
-                )
-              ],
               automaticallyImplyLeading: false,
             ),
             body: ListView(
@@ -71,7 +51,6 @@ class _AddSolutionState extends State<AddSolution> {
                 getLocation("防守队", Colors.blue),
                 getDefenseContainer(defenseList),
                 Container(margin: const EdgeInsets.only(top: 20.0)),
-                getLocation("如曾添加过该防守队的解法(程序录入的解法除外)，将会覆盖原添加的数据", Colors.green),
               ],
             )));
   }
