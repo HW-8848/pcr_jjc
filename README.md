@@ -15,4 +15,5 @@ A new Flutter project for Princess Connect Re:Dive.
     <img width="200" src="images/other/photo_3.jpg"/>
     <img width="200" src="images/other/photo_4.jpg"/>
     <img width="200" src="images/other/photo_5.jpg"/>
+    <img width="200" src="images/other/photo_6.jpg"/>
 </div>
