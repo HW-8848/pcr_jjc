@@ -43,7 +43,6 @@ class _SettingsState extends State<Settings> {
             trailing: Switch(
                 value: _userSelectSolutionKey,
                 onChanged: (newSelect) {
-                  print(newSelect);
                   setState(() {
                     LocalCache.setBool(
                         RoleData.userSelectSolutionKey, newSelect);

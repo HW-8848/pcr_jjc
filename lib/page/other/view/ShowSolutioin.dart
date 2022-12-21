@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:wanzi/tool/RoleData.dart';
 import 'package:wanzi/tool/RoleEnum.dart';
-import 'package:wanzi/tool/SaveSolution.dart';
 
 class ShowSolution extends StatefulWidget {
   final List<RoleEnum> defenseList;
