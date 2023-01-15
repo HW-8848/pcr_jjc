@@ -159,7 +159,7 @@ class _AddAttackState extends State<AddAttack> {
                     if (attackList.length < 5) {
                       roleList.remove(role);
                       attackList.add(role);
-                      defenseRoleSort();
+                      attackRoleSort();
                       roleSort(roleList);
                       setState(() {});
                     }
@@ -181,8 +181,8 @@ class _AddAttackState extends State<AddAttack> {
     );
   }
 
-  void defenseRoleSort() {
-    defenseList.sort(((a, b) => int.parse(b.getId) - int.parse(a.getId)));
+  void attackRoleSort() {
+    attackList.sort(((a, b) => int.parse(b.getId) - int.parse(a.getId)));
   }
 
   void roleSort(List<RoleEnum> roleList) {

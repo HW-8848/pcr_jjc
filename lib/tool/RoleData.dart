@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:wanzi/tool/LocalCache.dart';
 import 'package:wanzi/tool/RealSolution.dart';
 import 'package:wanzi/tool/RoleEnum.dart';
-import 'package:wanzi/tool/SolveList.dart';
 
 class RoleData {
   static String getIcon(RoleEnum role) {
