@@ -45,6 +45,7 @@ enum RoleEnum {
   ling(id: "550", name: "铃", location: "2"),
   kekeluo_gongzhu(id: "555", name: "可可萝(新年)", location: "2"),
   labilisita(id: "560", name: "菈比莉斯塔", location: "2"),
+  sisihua_xinnian(id: "562", name: "似似花(新年)", location: "2"),
   shenyue(id: "565", name: "深月", location: "2"),
   chuyin_xiari(id: "567", name: "初音(夏日)", location: "2"),
   qianli(id: "570", name: "茜里", location: "2"),
